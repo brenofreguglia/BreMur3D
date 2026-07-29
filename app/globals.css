@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 250 250 250;
+  --foreground: 10 10 12;
+  --surface: 255 255 255;
+  --surface-muted: 244 244 245;
+  --border: 228 228 231;
+}
+
+.dark {
+  --background: 10 10 12;
+  --foreground: 250 250 250;
+  --surface: 24 24 27;
+  --surface-muted: 16 16 18;
+  --border: 35 35 39;
+}
+
+@layer base {
+  * {
+    @apply border-[rgb(var(--border))];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[rgb(var(--background))] text-[rgb(var(--foreground))] font-body antialiased;
+    font-feature-settings: "ss01" on, "cv01" on;
+  }
+
+  ::selection {
+    @apply bg-accent-500/30 text-inherit;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-500 ring-offset-2 ring-offset-[rgb(var(--background))];
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1360px] px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-accent-500;
+  }
+
+  .hairline {
+    @apply border-t border-[rgb(var(--border))];
+  }
+
+  .spec-frame {
+    position: relative;
+  }
+
+  .spec-frame::before,
+  .spec-frame::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-color: rgb(37 99 235);
+    border-style: solid;
+    pointer-events: none;
+  }
+
+  .spec-frame::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+  }
+
+  .spec-frame::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

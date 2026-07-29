@@ -1,0 +1,23 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#101012"/>
+  <g stroke="#232327" stroke-width="1">
+    <line x1="400.0" y1="60" x2="400.0" y2="740" stroke-dasharray="2 6"/>
+    <line x1="60" y1="400.0" x2="740" y2="400.0" stroke-dasharray="2 6"/>
+  </g>
+  <!-- corner brackets -->
+  <g stroke="#2563eb" stroke-width="3" fill="none" stroke-linecap="square">
+    <path d="M 48 90 L 48 48 L 90 48"/>
+    <path d="M 710 48 L 752 48 L 752 90"/>
+    <path d="M 752 710 L 752 752 L 710 752"/>
+    <path d="M 90 752 L 48 752 L 48 710"/>
+  </g>
+  <g transform="translate(400.0, 400.0)" stroke="#3b82f6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    
+        <path d="M -140 -20 C -140 -70 -90 -80 -40 -60 L 40 -60 C 90 -80 140 -70 140 -20 C 140 40 90 60 40 40 L -40 40 C -90 60 -140 40 -140 -20 Z"/>
+        <circle cx="-70" cy="-10" r="14"/>
+        <circle cx="70" cy="-10" r="14"/>
+    
+  </g>
+  <text x="64" y="736" fill="#a1a1a8" font-family="monospace" font-size="18" letter-spacing="1">PLA · 220x100x80mm</text>
+  <circle cx="736" cy="736" r="4" fill="#2563eb"/>
+</svg>
