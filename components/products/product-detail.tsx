@@ -9,6 +9,7 @@ import { formatPrice } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { QuoteModal } from "@/components/products/quote-modal";
+import ColorSelector from "@/components/products/color-selector";
 
 const ProductViewer = dynamic(
   () => import("@/components/products/product-viewer").then((module) => module.ProductViewer),
@@ -53,51 +54,8 @@ export function ProductDetail({ product }: { product: Product }) {
             <p className="text-sm leading-relaxed text-ink-400">{product.description}</p>
           </div>
 
-          <div className="hairline grid grid-cols-3 gap-4 border-t border-[rgb(var(--border))] py-6">
-            <div className="flex flex-col gap-2">
-              <Clock className="h-4 w-4 text-accent-500" />
-              <span className="text-xs text-ink-400">Produção</span>
-              <span className="font-mono text-sm">{product.productionTimeDays} dia(s)</span>
-            </div>
-            <div className="flex flex-col gap-2">
-              <Layers className="h-4 w-4 text-accent-500" />
-              <span className="text-xs text-ink-400">Material</span>
-              <span className="font-mono text-sm">{product.materials.join(" / ")}</span>
-            </div>
-            {product.dimensions && (
-              <div className="flex flex-col gap-2">
-                <Ruler className="h-4 w-4 text-accent-500" />
-                <span className="text-xs text-ink-400">Dimensões</span>
-                <span className="font-mono text-sm">
-                  {product.dimensions.height}×{product.dimensions.width}×{product.dimensions.depth}
-                  {product.dimensions.unit}
-                </span>
-              </div>
-            )}
-          </div>
-
           <div>
-            <span className="font-mono text-xs uppercase tracking-wider text-ink-400">Cores disponíveis</span>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {product.colors.map((c) => (
-                <button
-                  key={c.id}
-                  type="button"
-                  onClick={() => setSelectedColor(c)}
-                  className={`flex items-center gap-2 rounded-xs border px-3 py-2 text-xs transition-colors ${
-                    selectedColor?.id === c.id
-                      ? "border-accent-500 text-accent-500"
-                      : "border-[rgb(var(--border))] text-ink-400 hover:border-accent-500 hover:text-accent-500"
-                  }`}
-                >
-                  <span
-                    className="h-3 w-3 rounded-full border border-[rgb(var(--border))]"
-                    style={{ backgroundColor: c.hex }}
-                  />
-                  {c.name}
-                </button>
-              ))}
-            </div>
+            <ColorSelector options={product.colors} selectedId={selectedColor?.id} onSelect={(c) => setSelectedColor(c)} />
           </div>
 
           <Button size="lg" className="w-full sm:w-fit" onClick={() => setQuoteOpen(true)}>
