@@ -1,6 +1,6 @@
 "use client";
 
-import { Component, Suspense, type ReactNode, useEffect, useMemo, useRef } from "react";
+import { Component, Suspense, type ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { ContactShadows, Environment, Html, OrbitControls, useGLTF } from "@react-three/drei";
 import { Color, Group, Mesh, type Material } from "three";
@@ -106,7 +106,34 @@ function ViewerLoading() {
 }
 
 export function ProductViewer({ model, color }: ProductViewerProps) {
-  if (model) {
+  const [modelAvailable, setModelAvailable] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+
+    if (!model) {
+      setModelAvailable(false);
+      return;
+    }
+
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const res = await fetch(model, { method: "HEAD", signal: controller.signal });
+        if (active) setModelAvailable(res.ok);
+      } catch (err) {
+        if (active) setModelAvailable(false);
+      }
+    })();
+
+    return () => {
+      active = false;
+      controller.abort();
+    };
+  }, [model]);
+
+  if (model && modelAvailable) {
     useGLTF.preload(model);
   }
 
@@ -124,7 +151,7 @@ export function ProductViewer({ model, color }: ProductViewerProps) {
         <Suspense fallback={<ViewerLoading />}>
           <ProductViewerErrorBoundary fallback={<FallbackModel color={color} />}>
             <group position={[0, -0.12, 0]}>
-              <LoadedModel model={model} color={color} />
+              {model && modelAvailable ? <LoadedModel model={model} color={color} /> : <FallbackModel color={color} />}
             </group>
           </ProductViewerErrorBoundary>
         </Suspense>
