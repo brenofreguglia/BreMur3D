@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ChevronLeft, Clock, Layers, Ruler } from "lucide-react";
 import type { Product } from "@/types";
@@ -10,9 +10,23 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { QuoteModal } from "@/components/products/quote-modal";
 
+const ProductViewer = dynamic(
+  () => import("@/components/products/product-viewer").then((module) => module.ProductViewer),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex min-h-[420px] items-center justify-center text-sm text-ink-400">
+        Carregando modelo 3D...
+      </div>
+    ),
+  },
+);
+
 export function ProductDetail({ product }: { product: Product }) {
-  const [activeImage, setActiveImage] = useState(0);
+  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [quoteOpen, setQuoteOpen] = useState(false);
+  const viewerModel = product.model ?? `/models/products/${product.slug}.glb`;
+  const viewerColor = selectedColor?.hex ?? product.colors[0]?.hex ?? "#d4d4d8";
 
   return (
     <div className="container-page py-14">
@@ -26,30 +40,9 @@ export function ProductDetail({ product }: { product: Product }) {
 
       <div className="grid gap-12 lg:grid-cols-2">
         <div className="flex flex-col gap-3">
-          <div className="spec-frame relative aspect-square overflow-hidden rounded-xs border border-[rgb(var(--border))]">
-            <Image
-              src={product.images[activeImage].url}
-              alt={product.images[activeImage].alt}
-              fill
-              className="object-cover"
-              priority
-            />
+          <div className="spec-frame overflow-hidden rounded-xs border border-[rgb(var(--border))] bg-[linear-gradient(180deg,rgba(37,99,235,0.07),rgba(255,255,255,0))]">
+            <ProductViewer model={viewerModel} color={viewerColor} />
           </div>
-          {product.images.length > 1 && (
-            <div className="flex gap-2">
-              {product.images.map((img, index) => (
-                <button
-                  key={img.id}
-                  onClick={() => setActiveImage(index)}
-                  className={`relative h-16 w-16 overflow-hidden rounded-xs border ${
-                    activeImage === index ? "border-accent-500" : "border-[rgb(var(--border))]"
-                  }`}
-                >
-                  <Image src={img.url} alt={img.alt} fill className="object-cover" />
-                </button>
-              ))}
-            </div>
-          )}
         </div>
 
         <div className="flex flex-col gap-6">
@@ -87,13 +80,22 @@ export function ProductDetail({ product }: { product: Product }) {
             <span className="font-mono text-xs uppercase tracking-wider text-ink-400">Cores disponíveis</span>
             <div className="mt-3 flex flex-wrap gap-2">
               {product.colors.map((c) => (
-                <span
+                <button
                   key={c.id}
-                  className="flex items-center gap-2 rounded-xs border border-[rgb(var(--border))] px-3 py-2 text-xs"
+                  type="button"
+                  onClick={() => setSelectedColor(c)}
+                  className={`flex items-center gap-2 rounded-xs border px-3 py-2 text-xs transition-colors ${
+                    selectedColor?.id === c.id
+                      ? "border-accent-500 text-accent-500"
+                      : "border-[rgb(var(--border))] text-ink-400 hover:border-accent-500 hover:text-accent-500"
+                  }`}
                 >
-                  <span className="h-3 w-3 rounded-full border border-[rgb(var(--border))]" style={{ backgroundColor: c.hex }} />
+                  <span
+                    className="h-3 w-3 rounded-full border border-[rgb(var(--border))]"
+                    style={{ backgroundColor: c.hex }}
+                  />
                   {c.name}
-                </span>
+                </button>
               ))}
             </div>
           </div>
@@ -104,7 +106,12 @@ export function ProductDetail({ product }: { product: Product }) {
         </div>
       </div>
 
-      <QuoteModal product={product} open={quoteOpen} onClose={() => setQuoteOpen(false)} />
+      <QuoteModal
+        product={product}
+        open={quoteOpen}
+        onClose={() => setQuoteOpen(false)}
+        defaultColor={selectedColor?.name}
+      />
     </div>
   );
 }

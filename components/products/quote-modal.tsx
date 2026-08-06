@@ -14,10 +14,11 @@ interface QuoteModalProps {
   product: Product;
   open: boolean;
   onClose: () => void;
+  defaultColor?: string;
 }
 
-export function QuoteModal({ product, open, onClose }: QuoteModalProps) {
-  const [color, setColor] = useState(product.colors[0]?.name);
+export function QuoteModal({ product, open, onClose, defaultColor }: QuoteModalProps) {
+  const [color, setColor] = useState(defaultColor ?? product.colors[0]?.name);
   const [quantity, setQuantity] = useState(1);
   const [notes, setNotes] = useState("");
 

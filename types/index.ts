@@ -51,6 +51,7 @@ export interface Product {
   category: Category["name"];
   images: ProductImage[];
   colors: Color[];
+  model?: string;
   materials: MaterialKind[];
   productionTimeDays: number;
   featured?: boolean;

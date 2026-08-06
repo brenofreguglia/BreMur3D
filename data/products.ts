@@ -17,6 +17,7 @@ export const products: Product[] = [
     images: [
       { id: "img-1a", url: "/images/products/suporte-headset.svg", alt: "Suporte para headset em PLA azul", isPrimary: true },
     ],
+    model: "/models/products/suporte-headset.glb",
     colors: [c("Preto"), c("Branco"), c("Azul"), c("Cinza")],
     materials: ["PLA", "PETG"],
     productionTimeDays: 2,
@@ -37,6 +38,7 @@ export const products: Product[] = [
     images: [
       { id: "img-2a", url: "/images/products/suporte-notebook.svg", alt: "Suporte para notebook", isPrimary: true },
     ],
+    model: "/models/products/suporte-notebook.glb",
     colors: [c("Preto"), c("Branco"), c("Cinza")],
     materials: ["PETG", "ABS"],
     productionTimeDays: 3,
@@ -57,6 +59,7 @@ export const products: Product[] = [
     images: [
       { id: "img-3a", url: "/images/products/organizador-cabos.svg", alt: "Organizador de cabos", isPrimary: true },
     ],
+    model: "/models/products/organizador-cabos.glb",
     colors: [c("Preto"), c("Branco"), c("Azul")],
     materials: ["PLA"],
     productionTimeDays: 1,
@@ -77,6 +80,7 @@ export const products: Product[] = [
     images: [
       { id: "img-4a", url: "/images/products/suporte-controle.svg", alt: "Suporte para controle de videogame", isPrimary: true },
     ],
+    model: "/models/products/suporte-controle.glb",
     colors: [c("Preto"), c("Branco"), c("Vermelho"), c("Azul")],
     materials: ["PLA", "PETG"],
     productionTimeDays: 2,
@@ -97,6 +101,7 @@ export const products: Product[] = [
     images: [
       { id: "img-5a", url: "/images/products/gancho-multiuso.svg", alt: "Gancho multiuso de parede", isPrimary: true },
     ],
+    model: "/models/products/gancho-multiuso.glb",
     colors: [c("Preto"), c("Branco"), c("Cinza"), c("Amarelo")],
     materials: ["PETG", "ABS"],
     productionTimeDays: 1,
@@ -116,6 +121,7 @@ export const products: Product[] = [
     images: [
       { id: "img-6a", url: "/images/products/porta-chaves.svg", alt: "Porta chaves de parede com três ganchos", isPrimary: true },
     ],
+    model: "/models/products/porta-chaves.glb",
     colors: [c("Preto"), c("Branco"), c("Azul"), c("Verde")],
     materials: ["PLA"],
     productionTimeDays: 1,
@@ -135,6 +141,7 @@ export const products: Product[] = [
     images: [
       { id: "img-7a", url: "/images/products/organizador-mesa.svg", alt: "Organizador de mesa modular", isPrimary: true },
     ],
+    model: "/models/products/organizador-mesa.glb",
     colors: [c("Preto"), c("Branco"), c("Cinza"), c("Azul")],
     materials: ["PETG", "PLA"],
     productionTimeDays: 2,
