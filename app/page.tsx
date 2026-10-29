@@ -6,7 +6,7 @@ import { FeaturedProducts } from "@/components/home/featured-products";
 import { CtaBanner } from "@/components/home/cta-banner";
 
 export const metadata: Metadata = {
-  title: "FORMA3D — Impressão 3D personalizada",
+  title: "BreMur3D — Impressão 3D personalizada",
   description:
     "Transformamos ideias em peças reais. Impressão 3D personalizada para sua casa, empresa ou projeto.",
 };

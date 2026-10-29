@@ -17,7 +17,7 @@ export function Differentials() {
     <section className="hairline border-t border-[rgb(var(--border))]">
       <div className="container-page py-16 md:py-20">
         <div className="mb-10 flex flex-col gap-3">
-          <span className="eyebrow">Por que FORMA3D</span>
+          <span className="eyebrow">Por que BreMur3D</span>
           <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
             Feito com o mesmo rigor de uma peça de engenharia.
           </h2>
@@ -35,7 +35,7 @@ export function Differentials() {
                 transition={{ duration: 0.5, delay: index * 0.06 }}
                 className="flex flex-col gap-4 bg-[rgb(var(--background))] p-6"
               >
-                <Icon className="h-5 w-5 text-accent-500" />
+                <Icon className="h-5 w-5 text-gold-gradient" />
                 <h3 className="font-display text-sm font-semibold">{item.title}</h3>
                 <p className="text-sm text-ink-400">{item.description}</p>
               </motion.div>

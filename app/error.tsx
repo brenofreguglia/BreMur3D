@@ -19,7 +19,7 @@ export default function GlobalError({
 
   return (
     <div className="container-page flex min-h-[70vh] flex-col items-center justify-center gap-5 py-20 text-center">
-      <span className="flex h-14 w-14 items-center justify-center rounded-xs border border-[rgb(var(--border))] text-accent-500">
+      <span className="flex h-14 w-14 items-center justify-center rounded-xs border border-[rgb(var(--border))] text-gold-gradient">
         <AlertTriangle className="h-6 w-6" />
       </span>
       <h1 className="font-display text-2xl font-semibold">Algo não saiu como esperado</h1>

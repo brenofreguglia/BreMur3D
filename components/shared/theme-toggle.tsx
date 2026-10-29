@@ -17,7 +17,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label="Alternar tema claro e escuro"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       className={cn(
-        "relative flex h-9 w-9 items-center justify-center rounded-xs border border-[rgb(var(--border))] text-current transition-colors hover:border-accent-500 hover:text-accent-500",
+        "relative flex h-9 w-9 items-center justify-center rounded-xs border border-[rgb(var(--border))] text-current transition-colors hover:border-accent-500 hover:text-gold-gradient",
         className
       )}
     >

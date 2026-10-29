@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://forma3d.com.br/sitemap.xml",
+    sitemap: "https://BreMur3D.com.br/sitemap.xml",
   };
 }

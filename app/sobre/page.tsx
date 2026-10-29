@@ -4,7 +4,7 @@ import { Target, Eye, Heart } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sobre",
-  description: "Conheça a missão, visão e valores da FORMA3D, estúdio de impressão 3D personalizada.",
+  description: "Conheça a missão, visão e valores da BreMur3D, estúdio de impressão 3D personalizada.",
 };
 
 const values = [
@@ -22,7 +22,7 @@ export default function SobrePage() {
           Um estúdio pequeno, obcecado por acabamento.
         </h1>
         <p className="text-sm text-ink-400">
-          A FORMA3D nasceu da vontade de aproximar a impressão 3D do dia a dia
+          A BreMur3D nasceu da vontade de aproximar a impressão 3D do dia a dia
           das pessoas — sem jargão técnico, sem letra miúda, com peças que
           realmente resolvem um problema.
         </p>
@@ -33,14 +33,14 @@ export default function SobrePage() {
           <Image src="/images/about/printer.svg" alt="Impressora 3D FDM do estúdio" fill className="object-cover" />
         </div>
         <div className="spec-frame relative aspect-[4/3] overflow-hidden rounded-xs border border-[rgb(var(--border))]">
-          <Image src="/images/about/workshop.svg" alt="Ambiente de produção da FORMA3D" fill className="object-cover" />
+          <Image src="/images/about/workshop.svg" alt="Ambiente de produção da BreMur3D" fill className="object-cover" />
         </div>
       </div>
 
       <div className="hairline mt-16 grid gap-px overflow-hidden rounded-xs border border-[rgb(var(--border))] bg-[rgb(var(--border))] sm:grid-cols-3">
         {values.map((value) => (
           <div key={value.title} className="flex flex-col gap-4 bg-[rgb(var(--background))] p-8">
-            <value.icon className="h-5 w-5 text-accent-500" />
+            <value.icon className="h-5 w-5 text-gold-gradient" />
             <h2 className="font-display text-lg font-semibold">{value.title}</h2>
             <p className="text-sm text-ink-400">{value.text}</p>
           </div>

@@ -17,7 +17,7 @@ export function FeaturedProducts() {
           </div>
           <Link
             href="/catalogo"
-            className="flex items-center gap-1 text-sm text-accent-500 hover:underline"
+            className="flex items-center gap-1 text-sm text-gold-gradient hover:underline"
           >
             Ver catálogo completo
             <ArrowRight className="h-4 w-4" />

@@ -1,5 +1,5 @@
 {
-  "name": "forma3d",
+  "name": "BreMur3D",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,10 +18,10 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.0.0",
     "lucide-react": "^0.542.0",
-    "next": "^16.2.12",
+    "next": "^16.4.3",
     "next-themes": "^0.4.6",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "tailwind-merge": "^3.3.1",
     "three": "^0.185.1"
   },

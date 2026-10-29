@@ -39,11 +39,11 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
         <div className="flex flex-1 flex-col gap-3 p-5">
           <div className="flex items-start justify-between gap-2">
             <Link href={`/catalogo/${product.slug}`}>
-              <h3 className="font-display text-base font-semibold hover:text-accent-500">
+              <h3 className="font-display text-base font-semibold hover:text-gold-gradient">
                 {product.name}
               </h3>
             </Link>
-            <span className="font-mono text-sm text-accent-500">{formatPrice(product.price)}</span>
+            <span className="font-mono text-sm text-gold-gradient">{formatPrice(product.price)}</span>
           </div>
           <p className="text-sm text-ink-400">{product.shortDescription}</p>
 

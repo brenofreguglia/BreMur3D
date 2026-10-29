@@ -33,7 +33,7 @@ export function ProductDetail({ product }: { product: Product }) {
     <div className="container-page py-14">
       <Link
         href="/catalogo"
-        className="mb-8 inline-flex items-center gap-1 text-sm text-ink-400 hover:text-accent-500"
+        className="mb-8 inline-flex items-center gap-1 text-sm text-ink-400 hover:text-gold-gradient"
       >
         <ChevronLeft className="h-4 w-4" />
         Voltar ao catálogo
@@ -50,7 +50,7 @@ export function ProductDetail({ product }: { product: Product }) {
           <div className="flex flex-col gap-3">
             <Badge className="w-fit">{product.category}</Badge>
             <h1 className="font-display text-3xl font-semibold tracking-tight">{product.name}</h1>
-            <p className="font-mono text-2xl text-accent-500">{formatPrice(product.price)}</p>
+            <p className="font-mono text-2xl text-gold-gradient">{formatPrice(product.price)}</p>
             <p className="text-sm leading-relaxed text-ink-400">{product.description}</p>
           </div>
 

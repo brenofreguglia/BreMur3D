@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Contato",
-  description: "Fale com a FORMA3D pelo WhatsApp, Instagram ou email. Veja também nosso horário de atendimento.",
+  description: "Fale com a BreMur3D pelo WhatsApp, Instagram ou email. Veja também nosso horário de atendimento.",
 };
 
 export default function ContatoPage() {
@@ -28,7 +28,7 @@ export default function ContatoPage() {
             rel="noopener noreferrer"
             className="flex items-center gap-4 rounded-xs border border-[rgb(var(--border))] p-5 transition-colors hover:border-accent-500"
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-xs bg-accent-500/10 text-accent-500">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xs bg-accent-500/10 text-gold-gradient">
               <MessageCircle className="h-5 w-5" />
             </span>
             <div>
@@ -43,25 +43,25 @@ export default function ContatoPage() {
             rel="noopener noreferrer"
             className="flex items-center gap-4 rounded-xs border border-[rgb(var(--border))] p-5 transition-colors hover:border-accent-500"
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-xs bg-accent-500/10 text-accent-500">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xs bg-accent-500/10 text-gold-gradient">
               <Instagram className="h-5 w-5" />
             </span>
             <div>
               <p className="font-display text-sm font-semibold">Instagram</p>
-              <p className="text-sm text-ink-400">@forma3d</p>
+              <p className="text-sm text-ink-400">@BreMur3D</p>
             </div>
           </a>
 
           <a
-            href="mailto:contato@forma3d.com.br"
+            href="mailto:contato@BreMur3D.com.br"
             className="flex items-center gap-4 rounded-xs border border-[rgb(var(--border))] p-5 transition-colors hover:border-accent-500"
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-xs bg-accent-500/10 text-accent-500">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xs bg-accent-500/10 text-gold-gradient">
               <Mail className="h-5 w-5" />
             </span>
             <div>
               <p className="font-display text-sm font-semibold">Email</p>
-              <p className="text-sm text-ink-400">contato@forma3d.com.br</p>
+              <p className="text-sm text-ink-400">contato@BreMur3D.com.br</p>
             </div>
           </a>
 
@@ -86,7 +86,7 @@ export default function ContatoPage() {
 
         <div className="spec-frame relative flex min-h-[320px] flex-col items-center justify-center gap-3 overflow-hidden rounded-xs border border-[rgb(var(--border))] bg-ink-950 text-white">
           <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(37,99,235,0.25)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.25)_1px,transparent_1px)] [background-size:32px_32px]" />
-          <MapPin className="relative h-6 w-6 text-accent-500" />
+          <MapPin className="relative h-6 w-6 text-gold-gradient" />
           <p className="relative font-mono text-sm">São Paulo, SP — Brasil</p>
           <p className="relative max-w-xs text-center text-xs text-ink-300">
             Atendimento e produção por encomenda. Endereço exato compartilhado

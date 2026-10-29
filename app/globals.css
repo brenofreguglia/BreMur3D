@@ -1,21 +1,37 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================
+   BREMUR 3D — IDENTIDADE VISUAL
+========================================= */
+
 :root {
   --background: 250 250 250;
-  --foreground: 10 10 12;
+  --foreground: 15 15 17;
+
   --surface: 255 255 255;
-  --surface-muted: 244 244 245;
-  --border: 228 228 231;
+  --surface-muted: 245 244 240;
+  --border: 228 225 216;
+
+  /* Dourado BreMur */
+  --gold: 212 175 55;
+  --gold-light: 245 215 122;
+  --gold-dark: 166 124 0;
 }
 
 .dark {
   --background: 10 10 12;
   --foreground: 250 250 250;
+
   --surface: 24 24 27;
   --surface-muted: 16 16 18;
-  --border: 35 35 39;
+  --border: 49 45 37;
+
+  --gold: 212 175 55;
+  --gold-light: 245 215 122;
+  --gold-dark: 166 124 0;
 }
 
 @layer base {
@@ -33,27 +49,35 @@
   }
 
   ::selection {
-    @apply bg-accent-500/30 text-inherit;
+    background: rgb(var(--gold) / 0.3);
+    color: inherit;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-accent-500 ring-offset-2 ring-offset-[rgb(var(--background))];
+    @apply outline-none ring-2 ring-offset-2;
+    --tw-ring-color: rgb(var(--gold));
+    --tw-ring-offset-color: rgb(var(--background));
   }
 }
 
 @layer components {
+  /* Container principal */
   .container-page {
     @apply mx-auto w-full max-w-[1360px] px-6 md:px-10;
   }
 
+  /* Subtítulos */
   .eyebrow {
-    @apply font-mono text-xs uppercase tracking-[0.2em] text-accent-500;
+    @apply font-mono text-xs uppercase tracking-[0.2em];
+    color: rgb(var(--gold));
   }
 
+  /* Divisórias */
   .hairline {
     @apply border-t border-[rgb(var(--border))];
   }
 
+  /* Molduras decorativas */
   .spec-frame {
     position: relative;
   }
@@ -64,7 +88,7 @@
     position: absolute;
     width: 22px;
     height: 22px;
-    border-color: rgb(37 99 235);
+    border-color: rgb(var(--gold));
     border-style: solid;
     pointer-events: none;
   }
@@ -80,8 +104,52 @@
     right: -1px;
     border-width: 0 2px 2px 0;
   }
+
+  /* Texto dourado metálico */
+  .text-gold-gradient {
+    background: linear-gradient(
+      135deg,
+      #a67c00 0%,
+      #d4af37 35%,
+      #f5d77a 55%,
+      #d4af37 75%,
+      #a67c00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Botão premium */
+  .btn-gold {
+    @apply inline-flex items-center justify-center
+      rounded-md px-6 py-3 font-semibold
+      transition-all duration-300;
+
+    background: linear-gradient(
+      135deg,
+      #b8860b,
+      #d4af37,
+      #f5d77a
+    );
+
+    color: #111111;
+  }
+
+  .btn-gold:hover {
+    background: linear-gradient(
+      135deg,
+      #d4af37,
+      #f5d77a,
+      #d4af37
+    );
+
+    box-shadow: 0 8px 25px rgb(212 175 55 / 0.2);
+    transform: translateY(-2px);
+  }
 }
 
+/* Acessibilidade */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

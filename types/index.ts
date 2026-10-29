@@ -1,5 +1,5 @@
 /**
- * Domain types for FORMA3D.
+ * Domain types for BreMur3D.
  *
  * These are written as the future database contract, not just UI props.
  * When Supabase/Prisma is introduced, these interfaces should map ~1:1

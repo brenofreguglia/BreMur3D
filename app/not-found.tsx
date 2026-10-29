@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function NotFound() {
   return (
     <div className="container-page flex min-h-[70vh] flex-col items-center justify-center gap-6 py-20 text-center">
-      <span className="font-mono text-7xl font-semibold text-accent-500/20 sm:text-8xl">404</span>
+      <span className="font-mono text-7xl font-semibold text-gold-gradient/20 sm:text-8xl">404</span>
       <div className="flex flex-col gap-3">
         <h1 className="font-display text-2xl font-semibold tracking-tight">
           Essa peça não foi encontrada.

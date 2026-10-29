@@ -26,7 +26,7 @@ export function HowItWorks() {
               className="flex flex-1 flex-col items-center gap-4 py-4 text-center md:flex-row md:py-0"
             >
               <div className="flex flex-1 flex-col items-center gap-3 px-4">
-                <span className="font-mono text-xs text-accent-500">
+                <span className="font-mono text-xs text-gold-gradient">
                   {String(step.step).padStart(2, "0")}
                 </span>
                 <h3 className="font-display text-base font-semibold">{step.title}</h3>

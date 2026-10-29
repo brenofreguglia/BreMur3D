@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Instagram, Mail, MessageCircle } from "lucide-react";
 import { buildGeneralContactLink } from "@/lib/whatsapp";
+import Image from "next/image";
 
 const columns = [
   {
@@ -29,12 +30,25 @@ export function Footer() {
     <footer className="hairline border-t border-[rgb(var(--border))]">
       <div className="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
-          <span className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-            <span className="flex h-7 w-7 items-center justify-center rounded-xs bg-accent-500 text-xs text-white">
-              3D
-            </span>
-            FORMA3D
+          <Link
+          href="/"
+          className="flex items-center gap-3 font-display text-lg font-semibold tracking-tight"
+        >
+          <span className="relative flex h-10 w-10 shrink-0 items-center justify-center">
+            <Image
+              src="/images/logo/HeaderLogo.png"
+              alt="Logo BreMur 3D"
+              fill
+              priority
+              sizes="40px"
+              className="object-contain"
+            />
           </span>
+
+          <span className="text-[rgb(var(--foreground))]">
+            BreMur<span className="text-gold-gradient">3D</span>
+          </span>
+        </Link>
           <p className="max-w-xs text-sm text-ink-400">
             Transformamos ideias em peças reais. Impressão 3D personalizada, do
             protótipo à peça final.
@@ -45,7 +59,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="flex h-9 w-9 items-center justify-center rounded-xs border border-[rgb(var(--border))] hover:border-accent-500 hover:text-accent-500"
+              className="flex h-9 w-9 items-center justify-center rounded-xs border border-[rgb(var(--border))] hover:border-accent-500 hover:text-gold-gradient"
             >
               <MessageCircle className="h-4 w-4" />
             </a>
@@ -54,14 +68,14 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex h-9 w-9 items-center justify-center rounded-xs border border-[rgb(var(--border))] hover:border-accent-500 hover:text-accent-500"
+              className="flex h-9 w-9 items-center justify-center rounded-xs border border-[rgb(var(--border))] hover:border-accent-500 hover:text-gold-gradient"
             >
               <Instagram className="h-4 w-4" />
             </a>
             <a
-              href="mailto:contato@forma3d.com.br"
+              href="mailto:contato@BreMur3D.com.br"
               aria-label="Email"
-              className="flex h-9 w-9 items-center justify-center rounded-xs border border-[rgb(var(--border))] hover:border-accent-500 hover:text-accent-500"
+              className="flex h-9 w-9 items-center justify-center rounded-xs border border-[rgb(var(--border))] hover:border-accent-500 hover:text-gold-gradient"
             >
               <Mail className="h-4 w-4" />
             </a>
@@ -77,7 +91,7 @@ export function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-ink-400 transition-colors hover:text-accent-500"
+                className="text-sm text-ink-400 transition-colors hover:text-gold-gradient"
               >
                 {link.label}
               </Link>
@@ -96,7 +110,7 @@ export function Footer() {
 
       <div className="hairline border-t border-[rgb(var(--border))]">
         <div className="container-page flex flex-col gap-2 py-6 text-xs text-ink-400 md:flex-row md:items-center md:justify-between">
-          <span>© {year} FORMA3D. Todos os direitos reservados.</span>
+          <span>© {year} BreMur3D. Todos os direitos reservados.</span>
           <span className="font-mono">CNPJ 00.000.000/0001-00</span>
         </div>
       </div>

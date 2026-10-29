@@ -60,7 +60,7 @@ export function CustomProjectForm() {
         animate={{ opacity: 1, y: 0 }}
         className="mx-auto flex max-w-lg flex-col items-center gap-4 rounded-xs border border-[rgb(var(--border))] p-10 text-center"
       >
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent-500/10 text-accent-500">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-accent-500/10 text-gold-gradient">
           ✓
         </span>
         <h2 className="font-display text-xl font-semibold">Ideia recebida</h2>
@@ -144,7 +144,7 @@ export function CustomProjectForm() {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex h-20 w-20 flex-col items-center justify-center gap-1 rounded-xs border border-dashed border-[rgb(var(--border))] text-ink-400 hover:border-accent-500 hover:text-accent-500"
+              className="flex h-20 w-20 flex-col items-center justify-center gap-1 rounded-xs border border-dashed border-[rgb(var(--border))] text-ink-400 hover:border-accent-500 hover:text-gold-gradient"
             >
               <ImagePlus className="h-5 w-5" />
               <span className="text-[10px]">Adicionar</span>

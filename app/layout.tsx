@@ -22,16 +22,25 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-const siteUrl = "https://forma3d.com.br";
+const siteUrl = "https://BreMur3D.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "FORMA3D — Impressão 3D personalizada",
-    template: "%s · FORMA3D",
+    default: "BreMur3D — Impressão 3D personalizada",
+    template: "%s · BreMur3D",
   },
   description:
     "Transformamos ideias em peças reais. Impressão 3D personalizada para sua casa, empresa ou projeto. Solicite um orçamento pelo WhatsApp.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   keywords: [
     "impressão 3D",
     "impressão 3D personalizada",
@@ -41,16 +50,16 @@ export const metadata: Metadata = {
     "PETG",
   ],
   openGraph: {
-    title: "FORMA3D — Impressão 3D personalizada",
+    title: "BreMur3D — Impressão 3D personalizada",
     description: "Transformamos ideias em peças reais.",
     url: siteUrl,
-    siteName: "FORMA3D",
+    siteName: "BreMur3D",
     locale: "pt_BR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FORMA3D — Impressão 3D personalizada",
+    title: "BreMur3D — Impressão 3D personalizada",
     description: "Transformamos ideias em peças reais.",
   },
   robots: {
@@ -69,7 +78,11 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} font-body`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">{children}</main>

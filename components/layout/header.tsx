@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "/", label: "Início" },
@@ -23,11 +24,24 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[rgb(var(--border))] bg-[rgb(var(--background))]/85 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
-          <span className="flex h-7 w-7 items-center justify-center rounded-xs bg-accent-500 text-xs text-white">
-            3D
+        <Link
+          href="/"
+          className="flex items-center gap-3 font-display text-lg font-semibold tracking-tight"
+        >
+          <span className="relative flex h-10 w-10 shrink-0 items-center justify-center">
+            <Image
+              src="/images/logo/HeaderLogo.png"
+              alt="Logo BreMur 3D"
+              fill
+              priority
+              sizes="40px"
+              className="object-contain"
+            />
           </span>
-          FORMA3D
+
+          <span className="text-[rgb(var(--foreground))]">
+            BreMur<span className="text-gold-gradient">3D</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -38,8 +52,8 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm transition-colors hover:text-accent-500",
-                  active ? "text-accent-500" : "text-ink-400"
+                  "text-sm transition-colors hover:text-gold-gradient",
+                  active ? "text-gold-gradient" : "text-ink-400",
                 )}
               >
                 {link.label}
@@ -51,7 +65,9 @@ export function Header() {
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
           <Link href="/catalogo">
-            <Button variant="secondary" size="sm">Ver catálogo</Button>
+            <Button variant="secondary" size="sm">
+              Ver catálogo
+            </Button>
           </Link>
           <Link href="/contato">
             <Button size="sm">Solicitar orçamento</Button>
@@ -74,16 +90,20 @@ export function Header() {
         <div className="hairline border-b border-[rgb(var(--border))] bg-[rgb(var(--background))] md:hidden">
           <nav className="container-page flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
-              <Link
+              <Link 
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xs px-2 py-3 text-sm text-ink-400 hover:bg-[rgb(var(--surface-muted))] hover:text-accent-500"
+                className="rounded-xs px-2 py-3 text-sm text-ink-400 hover:bg-[rgb(var(--surface-muted))] hover:text-gold-gradient"
               >
                 {link.label}
               </Link>
             ))}
-            <Link href="/contato" onClick={() => setOpen(false)} className="mt-2">
+            <Link
+              href="/contato"
+              onClick={() => setOpen(false)}
+              className="mt-2"
+            >
               <Button className="w-full">Solicitar orçamento</Button>
             </Link>
           </nav>

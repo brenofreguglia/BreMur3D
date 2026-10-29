@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
 
-const siteUrl = "https://forma3d.com.br";
+const siteUrl = "https://BreMur3D.com.br";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [

@@ -45,7 +45,7 @@ export function QuoteModal({ product, open, onClose, defaultColor }: QuoteModalP
             <button
               aria-label="Fechar"
               onClick={onClose}
-              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-xs text-ink-400 hover:text-accent-500"
+              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-xs text-ink-400 hover:text-gold-gradient"
             >
               <X className="h-4 w-4" />
             </button>
@@ -56,7 +56,7 @@ export function QuoteModal({ product, open, onClose, defaultColor }: QuoteModalP
               </div>
               <div>
                 <h3 className="font-display text-lg font-semibold">{product.name}</h3>
-                <p className="font-mono text-sm text-accent-500">{formatPrice(product.price)}</p>
+                <p className="font-mono text-sm text-gold-gradient">{formatPrice(product.price)}</p>
               </div>
             </div>
 
@@ -70,7 +70,7 @@ export function QuoteModal({ product, open, onClose, defaultColor }: QuoteModalP
                       onClick={() => setColor(c.name)}
                       className={`flex items-center gap-2 rounded-xs border px-3 py-2 text-xs transition-colors ${
                         color === c.name
-                          ? "border-accent-500 text-accent-500"
+                          ? "border-accent-500 text-gold-gradient"
                           : "border-[rgb(var(--border))] text-ink-400 hover:border-accent-500"
                       }`}
                     >
@@ -90,7 +90,7 @@ export function QuoteModal({ product, open, onClose, defaultColor }: QuoteModalP
                   <button
                     aria-label="Diminuir quantidade"
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                    className="text-ink-400 hover:text-accent-500"
+                    className="text-ink-400 hover:text-gold-gradient"
                   >
                     <Minus className="h-4 w-4" />
                   </button>
@@ -98,7 +98,7 @@ export function QuoteModal({ product, open, onClose, defaultColor }: QuoteModalP
                   <button
                     aria-label="Aumentar quantidade"
                     onClick={() => setQuantity((q) => q + 1)}
-                    className="text-ink-400 hover:text-accent-500"
+                    className="text-ink-400 hover:text-gold-gradient"
                   >
                     <Plus className="h-4 w-4" />
                   </button>

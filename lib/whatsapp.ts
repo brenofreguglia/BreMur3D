@@ -7,10 +7,10 @@ import type { Product } from "@/types";
  * once the client provides it. Kept here so the whole app only has one
  * source of truth — easy to swap when a backend/config panel exists.
  */
-export const WHATSAPP_NUMBER = "5518998165080";
+export const WHATSAPP_NUMBER = "5518991336226";
 
 export interface QuoteRequestDetails {
-  product: Product;
+  product: Product; 
   color?: string;
   quantity?: number;
   notes?: string;
